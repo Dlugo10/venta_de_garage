@@ -1,0 +1,54 @@
+.cards-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 38px;
+  margin: 80px;
+}
+
+.show-container {
+  overflow: auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 50px ;
+  padding: 40px;
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 689px;
+  border-radius: 8px;
+  background-color: whitesmoke;
+  margin-bottom: 174px;
+}
+
+.show img{
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  float: left;
+  border-radius: 8px;
+  
+}
+
+.show-text-container {
+  display: inline-block;
+  margin-left: 30px;
+  color: black;
+}
+
+.show-text-container h4 {
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-top: 20px;
+  color: #79B473;
+}
+
+.sessions-container{
+  background-color: white;
+  width: 40%;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  padding: 150px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}

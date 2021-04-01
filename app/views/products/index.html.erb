@@ -1,0 +1,32 @@
+<% if current_user.admin? %>
+  <%= link_to 'Agregar Producto', new_product_path, class:'btn-index' %>
+<% end %>
+
+<div class="search-bar">
+  <%= form_tag products_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Enocontrar un Producto"%>
+    <%= submit_tag "Buscar", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<div class="cards-container">    
+  <% @products.each do |product| %>
+    <%= link_to product_path(product), style:"text-decoration:none" do %>
+      <div class="card-trip">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= product.title %></h2>
+            <p><%= product.description %></p>
+          </div>
+          <h2 class="card-trip-pricing"><%= product.price %>$</h2>
+        </div>
+      </div>
+    <%end %> 
+  <%end %>
+</div>  
+
+
