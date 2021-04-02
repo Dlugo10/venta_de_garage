@@ -6,6 +6,7 @@
   <%= f.input :description %>
   <%= f.input :age %>
   <%= f.input :dimensions %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true }%>
   <div style='text-align:center; margin-top:30px'>
     <%= f.submit class:'btn btn-flat' %>
   </div>

@@ -7,8 +7,8 @@
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "Enocontrar un Producto"%>
-    <%= submit_tag "Buscar", class: "btn btn-primary" %>
+      placeholder: "Buscar"%>
+    <%= submit_tag "Encontrar", class: "btn btn-primary", style:'border-radius:100px' %>
   <% end %>
 </div>
 
@@ -16,7 +16,7 @@
   <% @products.each do |product| %>
     <%= link_to product_path(product), style:"text-decoration:none" do %>
       <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <%= cl_image_tag product.photos.first.key, class: "card-img-top" %>
         <div class="card-trip-infos">
           <div>
             <h2><%= product.title %></h2>

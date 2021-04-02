@@ -10,36 +10,44 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 50px ;
   padding: 40px;
-  width: 55%;
+  width: 65%;
   margin-left: auto;
   margin-right: auto;
   height: 689px;
   border-radius: 8px;
   background-color: whitesmoke;
   margin-bottom: 174px;
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  background-color: #5b9b6f; 
 }
 
 .show img{
   height: 600px;
   width: 100%;
   object-fit: cover;
-  display: block;
-  float: left;
   border-radius: 8px;
-  
 }
 
 .show-text-container {
-  display: inline-block;
   margin-left: 30px;
-  color: black;
+  color: white;
+  flex-grow: 1;
 }
 
 .show-text-container h4 {
   font-weight: 500;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   margin-top: 20px;
-  color: #79B473;
+  color: rgb(233, 233, 233);
+}
+
+.show-text-container p {
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-top: 10px;
+  color: rgb(233, 233, 233);
+  text-align: right;
 }
 
 .sessions-container{
@@ -51,4 +59,38 @@
   margin-top: 40px;
   padding: 150px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.carousel-container{
+  position: relative;
+  width: 600px;
+  overflow: hidden;
+  max-height: 700px;
+}
+
+// .carousel-img-container{
+//   width: 600px !important;
+//   height: 640px !important;
+// }
+
+.carousel-img-container img {
+  object-fit: contain;
+  vertical-align: middle;
+  border-style: none;
+  width: 100%;
+  padding-top: 90px;
+  height: 500px;
+}
+
+.contacto-container {
+  overflow: auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 50px ;
+  padding: 40px;
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 689px;
+  border-radius: 8px;
+  background-color: whitesmoke;
 }
