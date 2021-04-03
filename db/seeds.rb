@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Product.destroy_all
 
-10.times do 
+100.times do 
   product = Product.create(
     title: ['Mueble', 'Silla', 'Cama', 'Ipad', 'Ropa', 'Velador', 'Libro'].sample,
     price: rand(30..600),

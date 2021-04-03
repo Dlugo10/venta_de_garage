@@ -56,3 +56,7 @@ gem 'pg_search', '~> 2.3.0'
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
+
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap4'
+gem 'bootstrap-will_paginate'

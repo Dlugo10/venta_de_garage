@@ -5,9 +5,9 @@ class ProductsController < ApplicationController
 
     if params[:query].present?
       sql_query = "title ILIKE :query OR description ILIKE :query"
-      @products = Product.where(sql_query, query: "%#{params[:query]}%")
+      @products = Product.paginate(page: params[:page], per_page: 12).where(sql_query, query: "%#{params[:query]}%")
     else
-      @products = Product.all
+      @products = Product.all.paginate(page: params[:page], per_page: 12)
     end
   end
 
