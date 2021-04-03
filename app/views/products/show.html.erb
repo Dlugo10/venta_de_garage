@@ -6,33 +6,30 @@
 
 <div class="show-container">
 
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <% @product.photos.each_with_index do |photo, n| %>
-    <% end %>
-    <div class="carousel-inner carousel-container">
-      <div class="carousel-item active carousel-img-container">
-        <%= cl_image_tag @product.photos.first.key %>
-      </div>
-      <% @product.photos.drop(1).each do |photo| %>
-        <div class="carousel-item carousel-img-container">
-          <%= cl_image_tag photo.key, class: "d-block w-100", style: 'height:400px'  %>
-        </div>
+  
+    <% if @product.photos.any? %>
+      <% @product.photos.each_with_index do |photo, n| %>
       <% end %>
-    </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-      
-  </div> 
+      <div class="carousel-inner carousel-container">
+        <div class="carousel-item active carousel-img-container">
+          <%= cl_image_tag @product.photos.first.key %>
+        </div>
+        <% @product.photos.drop(1).each do |photo| %>
+          <div class="carousel-item carousel-img-container">
+            
+              <%= cl_image_tag photo.key, class: "d-block w-100", style: 'height:400px'  %>
+            
+          </div>
+        <% end %>
+      <%else%>        
+        <img , class="card-img-top", src="https://source.unsplash.com/random" alt="Card image cap">
+      <%end%>
+    </div>      
+
 
   <div class="show-text-container">
     <div style='margin-top:30px'>
-      <h4 style='font-size: xx-large; text-align:center'><%= @product.title %></h4>
+      <h4 style='font-size: xx-large; text-align:center; font-family: Satisfy;'><%= @product.title %></h4>
     </div>
     <h4 class="border-bottom">Precio</h4>
       <p><%= @product.price %> $</p>
@@ -49,7 +46,7 @@
         <%= link_to "Borrar Producto", product_path(@product), method: "delete", class: "btn-small", data: { confirm: "Are you sure?" }, style:'margin-top: 20px; margin-left: 20px;' %>
       </div>
     <% end %>
-    <p style='margin-top:100PX; text-align:right'>Todos los objetos seran desinfectados antes de la entrega</p>
+    <h5 style='margin-top:100PX'>Todos los objetos seran desinfectados antes de la entrega</h5>
   </div>
 
 </div>
