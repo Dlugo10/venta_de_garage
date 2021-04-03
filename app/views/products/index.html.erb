@@ -32,7 +32,9 @@
     <%end %> 
   <%end %>
 </div>  
-        <%= will_paginate(@products, :renderer => WillPaginate::ActionView::LinkRenderer, class: 'apple_pagination')  %>
+        <%= will_paginate(@products, :renderer => WillPaginate::ActionView::LinkRenderer, class: 'apple_pagination', style:'    position: fixed;
+    bottom: 0;
+    width: 100%;')  %>
 
 
 
