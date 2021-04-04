@@ -3,8 +3,6 @@
     <h1>Venta de Garage</h1>
 
     <% if user_signed_in? == false %>
-      <%= link_to "Registrate", new_user_registration_path, class: "btn btn-flat" %>
-    <% else %>
       <%= link_to "Todos los Productos", products_path, class: "btn btn-flat", style:'margin-top:20px'%>
     <% end %>
   </div>
