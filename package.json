@@ -2,6 +2,8 @@
   "name": "venta_de_garage",
   "private": true,
   "dependencies": {
+    "@papercups-io/chat-widget": "^1.1.9",
+    "@papercups-io/storytime": "^1.0.6",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
