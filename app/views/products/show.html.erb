@@ -6,25 +6,22 @@
 
 <div class="show-container">
 
-  
+  <div class="img-container">
     <% if @product.photos.any? %>
       <% @product.photos.each_with_index do |photo, n| %>
+    <% end %>
+
+      <%= cl_image_tag @product.photos.first.key %>
+
+      <% @product.photos.drop(1).each do |photo| %> 
+        <%= cl_image_tag photo.key, class: "d-block w-100", style: 'height:400px'  %>
+             
       <% end %>
-      <div class="carousel-inner carousel-container">
-        <div class="carousel-item active carousel-img-container">
-          <%= cl_image_tag @product.photos.first.key %>
-        </div>
-        <% @product.photos.drop(1).each do |photo| %>
-          <div class="carousel-item carousel-img-container">
-            
-              <%= cl_image_tag photo.key, class: "d-block w-100", style: 'height:400px'  %>
-            
-          </div>
-        <% end %>
+
       <%else%>        
         <img , class="card-img-top", src="https://source.unsplash.com/random" alt="Card image cap">
       <%end%>
-    </div>      
+  </div>      
 
 
   <div class="show-text-container">
