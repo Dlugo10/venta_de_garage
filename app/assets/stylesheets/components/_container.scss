@@ -6,60 +6,40 @@
 }
 
 .show-container {
-  overflow: auto;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 50px ;
   padding: 40px;
-  width: 60%;
   margin-left: auto;
   margin-right: auto;
   height: 900px;
-  border-radius: 8px;
-  background-color: whitesmoke;
-  margin-bottom: 174px;
-  display: flex;
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: #5b9b6f; 
-  border-top-left-radius: 100px;
-  border-bottom-right-radius: 150px;
+  width: 100%;
 }
 
 
 .show-text-container {
-  margin-left: 30px;
-  color: white;
+  color: rgb(97, 80, 194);
   flex-grow: 1;
   margin-right: 30px;
-  width: 160%;
 }
 
 .show-text-container h4 {
   font-weight: 500;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   margin-top: 20px;
-  color: rgb(233, 233, 233);
+  color: rgb(97, 80, 194);
 }
 
 .show-text-container p {
   font-weight: 500;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   margin-top: 10px;
-  color: rgb(233, 233, 233);
+  color: rgb(97, 80, 194);
   text-align: right;
 }
 
 .show-text-container h5 {
   text-align: center;
-}
-
-.img-container img {
-  vertical-align: middle;
-  border-style: none;
-  max-width: 500px;
-  max-height: 700px;
-  object-fit: contain;
-  margin-top: 30px;
-  border-radius: 8px;
 }
 
 .sessions-container{
@@ -116,6 +96,7 @@
 
 
 @media(max-width: 1024px) {
+    .cards-container {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
@@ -456,5 +437,4 @@
     font-size: 20px;
   }
 }
-
-
+}

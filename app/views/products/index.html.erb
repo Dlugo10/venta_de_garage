@@ -1,16 +1,24 @@
+<div class="banner">
+  <div class="container">
+    <h1>Compra con Nosotros</h1>
+    <p>Todos nuestros articulos a tu disposición</p>
+
+    <div class="search-bar">
+      <%= form_tag products_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Buscar"%>
+        <%= submit_tag "Encontrar", class: "btn btn-primary", style:'border-radius:100px' %>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
 <% if current_user.admin? %>
   <%= link_to 'Agregar Producto', new_product_path, class:'btn-index' %>
 <% end %>
-
-<div class="search-bar">
-  <%= form_tag products_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Buscar"%>
-    <%= submit_tag "Encontrar", class: "btn btn-primary", style:'border-radius:100px' %>
-  <% end %>
-</div>
 
 <div class="cards-container">    
   <% @products.each do |product| %>
@@ -32,42 +40,16 @@
     <%end %> 
   <%end %>
 </div>  
-        <%= will_paginate(@products, :renderer => WillPaginate::ActionView::LinkRenderer, class: 'apple_pagination', style:'    position: fixed;
-    bottom: 0;
-    width: 100%;')  %>
+    <%= will_paginate(@products, :renderer => WillPaginate::ActionView::LinkRenderer, class: 'apple_pagination', style:'    position: fixed;
+bottom: 0;
+width: 100%;')  %>
 
-   <script>
-      window.Papercups = {
-        config: {
-          accountId: "ef5f13ee-cf61-4d26-839b-a506055720ab",
-          title: "Escribenos",
-          subtitle: "Preguntanos lo que necesites 😊",
-          primaryColor: "#79b473",
-          greeting: "",
-          awayMessage: "",
-          newMessagePlaceholder: "Escribiendo...",
-          showAgentAvailability: true,
-          agentAvailableText: "Estamos en Linea!",
-          agentUnavailableText: "Estamos Desconectador por el Momento",
-          requireEmailUpfront: false,
-          iconVariant: "outlined",
-          baseUrl: "https://app.papercups.io",
-          // Optionally include data about your customer here to identify them
-          // customer: {
-          //   name: __CUSTOMER__.name,
-          //   email: __CUSTOMER__.email,
-          //   external_id: __CUSTOMER__.id,
-          //   metadata: {
-          //     plan: "premium"
-          //   }
-          // }
-        },
-      };
-      </script>
-      <script
-      type="text/javascript"
-      async
-      defer
-      src="https://app.papercups.io/widget.js"
-      src="https://app.papercups.io/storytime.js"
-      ></script>
+
+<a
+  href="https://wa.me/+593997521248"
+  class="whatsapp_float"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <i class="fa fa-whatsapp whatsapp-icon"></i>
+</a>

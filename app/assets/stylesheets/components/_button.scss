@@ -1,6 +1,6 @@
 .btn-flat {
   color: whitesmoke;
-  padding: 16px 150px;
+  padding: 16px 56px;
   background-image: linear-gradient(#70A37F, #79B473); 
   transition: background 0.3s ease;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -15,7 +15,9 @@
 }
 
 .btn-small {
+  text-decoration: none;
   color: white;
+  background-image: linear-gradient(#70A37F,#79B473);
   padding: 16px 15px;
   background-color:  transparent; 
   border: 1px solid;

@@ -5,28 +5,48 @@
 
 
 <div class="show-container">
+  <section>
+      <div class="container">
+          <div class="carousel">
+              <input type="radio" name="slides" checked="checked" id="slide-1">
+              <input type="radio" name="slides" id="slide-2">
+              <input type="radio" name="slides" id="slide-3">
+              <input type="radio" name="slides" id="slide-4">
+              <input type="radio" name="slides" id="slide-5">
+              <input type="radio" name="slides" id="slide-6">
+              <ul class="carousel__slides">
+                  <li class="carousel__slide">
+                      <% if @product.photos.any? %>
+                        <% @product.photos.each_with_index do |photo, n| %>
+                      <% end %>
+                      <figure>
+                              <%= cl_image_tag @product.photos.first.key, class: "d-block w-100" %>
+                              <% @product.photos.drop(1).each do |photo| %> 
+                                <%= cl_image_tag photo.key%>
+                                    
+                              <% end %>
+                          <%end%>        
+                      </figure>
+                  </li>
+                  
+              </ul>    
+              <ul class="carousel__thumbnails">
 
-  <div class="img-container">
-    <% if @product.photos.any? %>
-      <% @product.photos.each_with_index do |photo, n| %>
-    <% end %>
-
-      <%= cl_image_tag @product.photos.first.key %>
-
-      <% @product.photos.drop(1).each do |photo| %> 
-        <%= cl_image_tag photo.key, class: "d-block w-100", style: 'height:400px'  %>
-             
-      <% end %>
-
-      <%else%>        
-        <img , class="card-img-top", src="https://source.unsplash.com/random" alt="Card image cap">
-      <%end%>
-  </div>      
+                  <% @product.photos.each_with_index do |photo, n| %>
+                  <li>
+                    <label for="slide-<%=n += 1  %>"> <%= cl_image_tag photo.key, class: "d-block w-100" %> </label>
+                  <%end%>                      
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </section>
+    
 
 
   <div class="show-text-container">
     <div style='margin-top:30px'>
-      <h4 style='font-size: xx-large; text-align:center; font-family: Satisfy;'><%= @product.title %></h4>
+      <h4 style='font-size: xx-large; text-align:center; font-family: Poppins;'><%= @product.title %></h4>
     </div>
     <h4 class="border-bottom">Precio</h4>
       <p><%= @product.price %> $</p>
@@ -43,43 +63,17 @@
         <%= link_to "Borrar Producto", product_path(@product), method: "delete", class: "btn-small", data: { confirm: "Are you sure?" }, style:'margin-top: 20px; margin-left: 20px;' %>
       </div>
     <% end %>
-    <h5 style='margin-top:100PX'>Todos los objetos seran desinfectados antes de la entrega</h5>
+    <h5 style='margin-top:100PX; font-family: Poppins;'>Todos los objetos seran desinfectados antes de la entrega</h5>
   </div>
 
 </div>
 
- <script>
-      window.Papercups = {
-        config: {
-          accountId: "ef5f13ee-cf61-4d26-839b-a506055720ab",
-          title: "Escribenos",
-          subtitle: "Preguntanos lo que necesites 😊",
-          primaryColor: "#79b473",
-          greeting: "",
-          awayMessage: "",
-          newMessagePlaceholder: "Escribiendo...",
-          showAgentAvailability: true,
-          agentAvailableText: "Estamos en Linea!",
-          agentUnavailableText: "Estamos Desconectador por el Momento",
-          requireEmailUpfront: false,
-          iconVariant: "outlined",
-          baseUrl: "https://app.papercups.io",
-          // Optionally include data about your customer here to identify them
-          // customer: {
-          //   name: __CUSTOMER__.name,
-          //   email: __CUSTOMER__.email,
-          //   external_id: __CUSTOMER__.id,
-          //   metadata: {
-          //     plan: "premium"
-          //   }
-          // }
-        },
-      };
-      </script>
-      <script
-      type="text/javascript"
-      async
-      defer
-      src="https://app.papercups.io/widget.js"
-      src="https://app.papercups.io/storytime.js"
-      ></script>
+
+<a
+  href="https://wa.me/+593997521248"
+  class="whatsapp_float"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <i class="fa fa-whatsapp whatsapp-icon"></i>
+</a>
