@@ -5,44 +5,20 @@
 
 
 <div class="show-container">
-  <section>
-      <div class="container">
-          <div class="carousel">
-              <input type="radio" name="slides" checked="checked" id="slide-1">
-              <input type="radio" name="slides" id="slide-2">
-              <input type="radio" name="slides" id="slide-3">
-              <input type="radio" name="slides" id="slide-4">
-              <input type="radio" name="slides" id="slide-5">
-              <input type="radio" name="slides" id="slide-6">
-              <ul class="carousel__slides">
-                  <li class="carousel__slide">
-                      <% if @product.photos.any? %>
-                        <% @product.photos.each_with_index do |photo, n| %>
-                      <% end %>
-                      <figure>
-                              <%= cl_image_tag @product.photos.first.key, class: "d-block w-100" %>
-                              <% @product.photos.drop(1).each do |photo| %> 
-                                <%= cl_image_tag photo.key%>
-                                    
-                              <% end %>
-                          <%end%>        
-                      </figure>
-                  </li>
-                  
-              </ul>    
-              <ul class="carousel__thumbnails">
+ 
+  <% if @product.photos.any? %>
+    <% @product.photos.each_with_index do |photo, n| %>
+  <% end %>
 
-                  <% @product.photos.each_with_index do |photo, n| %>
-                  <li>
-                    <label for="slide-<%=n += 1  %>"> <%= cl_image_tag photo.key, class: "d-block w-100" %> </label>
-                  <%end%>                      
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </section>
-    
-
+        <%= cl_image_tag @product.photos.first.key, class: "d-block w-100", responsive_breakpoints: { 
+          create_derived: true, bytes_step: 20000, min_width: 200, max_width: 1000, transformation: { 
+          crop: :fill, aspect_ratio: "16:9", gravity: :auto } } %>
+          
+        <% @product.photos.drop(1).each do |photo| %> 
+          <%= cl_image_tag photo.key%>
+              
+        <% end %>
+    <%end%>        
 
   <div class="show-text-container">
     <div style='margin-top:30px'>
