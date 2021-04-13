@@ -99,11 +99,18 @@
 @media(max-width: 1024px) {
     .cards-container {
     grid-template-columns: 1fr 1fr 1fr;
+
+    .banner-text-container{
+      text-align: center;
+    }
   }
 
 @media(max-width: 768px) {
   .cards-container {
     grid-template-columns: 1fr 1fr;
+  }
+  .banner-text-container{
+    text-align: center;
   }
 }
 
@@ -111,11 +118,17 @@
   .cards-container {
     grid-template-columns: 1fr;
   }
+  .banner-text-container{
+    text-align: center;
+  }
 }
 
 @media(max-width: 375px) {
   .cards-container {
     grid-template-columns: 1fr;
+  }
+  .banner-text-container{
+    text-align: center;
   }
 }
 

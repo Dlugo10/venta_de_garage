@@ -64,7 +64,9 @@
 
 @media(max-width: 414px) {
   .search-bar {
+    margin-left: auto;
     width: 60%;
+    margin-right: auto;
   }
 
   .search-bar .btn {

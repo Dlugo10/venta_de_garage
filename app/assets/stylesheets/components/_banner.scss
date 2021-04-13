@@ -25,3 +25,31 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-family: "Poppins";
 }
+
+@media(max-width: 1024px) {
+  .banner {
+    padding: 400px 0;
+
+  }
+}
+
+@media(max-width: 768px) {
+  .banner {
+    padding: 300px 0;
+  }
+
+}
+
+@media(max-width: 414px) {
+  .banner {
+    padding: 200px 0;
+  }
+
+}
+
+@media(max-width: 375px) {
+  .banner {
+    padding: 100px 0;
+  }
+
+}
