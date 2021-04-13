@@ -1,7 +1,6 @@
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
 
-BootLib::Require.from_gem('bootsnap', 'bootsnap')
-
+require 'bootsnap'
 env = ENV['RAILS_ENV'] || "development"
 Bootsnap.setup(
   cache_dir:            'tmp/cache',          # Path to your cache
